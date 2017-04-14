@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import {
+  NativeModules,
+  Platform,
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+
+const ReactNativeFS = NativeModules.ReactNativeFS;
 
 const styles = StyleSheet.create({
   container: {
@@ -26,6 +30,11 @@ const styles = StyleSheet.create({
 });
 
 export default class AppStart extends Component {
+
+  componentDidMount() {
+    console.log(ReactNativeFS);
+  }
+
   render() {
     return (
       <View style={styles.container}>
